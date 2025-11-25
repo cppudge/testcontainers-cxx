@@ -1,0 +1,6 @@
+* text=auto eol=native
+*.bat text eol=crlf
+Cargo.lock eol=lf
+
+build/** linguist-generated -diff -merge
+rust/target/** linguist-generated -diff -merge

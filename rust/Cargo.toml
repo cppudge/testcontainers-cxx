@@ -1,0 +1,17 @@
+[package]
+name = "tc_bridge"
+version = "0.25.1"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]   # .a/.lib
+
+[dependencies]
+cxx = "1.0.187"
+testcontainers = { version = "0.25", features = ["blocking"] }
+tokio = { version = "1", features = ["rt", "macros"] }
+url = "2.5"
+
+[build-dependencies]
+cxx-build = "1.0.187"
+

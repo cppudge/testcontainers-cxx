@@ -1,0 +1,54 @@
+// See the README for details
+{
+    "name": "testcontainers-cxx",
+    "dockerFile": "Dockerfile",
+    "remoteUser": "vscode",
+
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2.12.4": {
+            "version": "latest",
+            "moby": true
+        }
+    },
+    "customizations": {
+      "vscode": {
+        // Set *default* container specific settings.json values on container create.
+        "settings": {
+          "cmake.buildDirectory": "/home/vscode/build",
+          "cmake.configureOnOpen": true,
+          "cmake.generator": "Ninja",
+          "terminal.integrated.shell.linux": "/bin/bash",
+          "debug.javascript.usePreview": false
+        },
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+          // C/C++ development
+          "ms-vscode.cmake-tools",
+          "ms-vscode.cpptools-extension-pack",
+          "ms-vscode.cpptools",
+          "twxs.cmake",
+          "mutantdino.resourcemonitor",
+          "rust-lang.rust-analyzer",
+          "vadimcn.vscode-lldb",
+          // Containers
+          "ms-azuretools.vscode-docker"
+        ]
+      }
+      // ,"codespaces": { // Configure properties specific to Codespaces.
+		  //    "openFiles": [
+			//      "README.md",
+			//      "CONTRIBUTING.md"
+		  //  ]
+	    // }
+    }
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [
+    //   8000
+    // ],
+    ,"containerEnv": {
+      "CONAN_HOME": "/home/vscode/.conan2"
+    }
+    // Updates cache on new container runs
+    // "postCreateCommand": "pip3 install -r .devcontainer/requirements.txt"
+    // "overrideCommand": false
+  }
